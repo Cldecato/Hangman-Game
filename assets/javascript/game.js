@@ -125,9 +125,10 @@ $(document).ready(function() {
         $("#alert").html("");
         var letter = event.which;
         playerGuess = String.fromCharCode(letter).toLowerCase();
+        displayLetter = playerGuess.toUpperCase();
         if ( playerGuess >= "a" && playerGuess <= "z" ) {
-            if (guessedLetters.indexOf(playerGuess) === -1) {
-                guessedLetters.push(playerGuess);
+            if (guessedLetters.indexOf(displayLetter) === -1) {
+                guessedLetters.push(" " + displayLetter);
                 $("#lettersGuessed").html("Letters Guessed: " + guessedLetters);
                 evaluateGuess(); 
                 checkWin();
